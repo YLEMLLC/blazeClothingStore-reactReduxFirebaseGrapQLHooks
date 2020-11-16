@@ -3,36 +3,33 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const config = {
-  apiKey: 'AIzaSyBIg8aD_OplHp-7ZMNlp1rS-3OQWmFMZmg',
-  authDomain: 'blaze-db-dedc5.firebaseapp.com',
-  databaseURL: 'https://blaze-db-dedc5.firebaseio.com',
-  projectId: 'blaze-db-dedc5',
-  storageBucket: 'blaze-db-dedc5.appspot.com',
-  messagingSenderId: '360931780215',
-  appId: '1:360931780215:web:c153dcd6501992a66e4872',
-  measurementId: 'G-5SV41HVXFL',
+  apiKey: 'AIzaSyD-gdedS3mlWT5chgXZV-bsxqar4sLBRII',
+  authDomain: 'blaze-db-26fab.firebaseapp.com',
+  databaseURL: 'https://blaze-db-26fab.firebaseio.com',
+  projectId: 'blaze-db-26fab',
+  storageBucket: 'blaze-db-26fab.appspot.com',
+  messagingSenderId: '384257048221',
+  appId: '1:384257048221:web:0ddd928c7990cc8c095e74',
 };
-export const createUserProfileDocument = async (userAuth, additionalData) => {
-  if (!userAuth) return;
 
-  const userRef = firestore.doc(`user/${userAuth.uid}`);
+export const createUserProfileDocument = async (user, additionalData) => {
+  if (!user) return;
+  const userRef = firestore.doc(`users/${user.uid}`);
 
   const snapShot = await userRef.get();
 
-  console.log(snapShot);
-
   if (!snapShot.exists) {
-    const { displayName, email } = userAuth;
-    const createdate = new Date();
+    const { displayName, email } = user;
+    const createdAt = new Date();
     try {
       await userRef.set({
         displayName,
         email,
-        createdate,
+        createdAt,
         ...additionalData,
       });
     } catch (error) {
-      console.log('error creating', error.message);
+      console.log('error creating user ', error.message);
     }
   }
   return userRef;
