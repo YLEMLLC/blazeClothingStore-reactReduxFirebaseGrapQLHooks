@@ -6,6 +6,8 @@ import { ReactComponent as Logo } from '../../assets/crown.svg';
 import { connect } from 'react-redux';
 
 import './header.styles.scss';
+import CartIcon from '../cart-icon/cart-icon';
+import CartDropDown from '../cart-dropdown/cart-dropdown.component';
 
 const Header = ({ currentUser }) => {
   return (
@@ -29,7 +31,9 @@ const Header = ({ currentUser }) => {
             SIGN IN
           </Link>
         )}
+        <CartIcon />
       </div>
+      <CartDropDown />
     </div>
   );
 };
