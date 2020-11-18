@@ -6,7 +6,7 @@ import { ReactComponent as Logo } from '../../assets/crown.svg';
 import { connect } from 'react-redux';
 
 import './header.styles.scss';
-import CartIcon from '../cart-icon/cart-icon';
+import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropDown from '../cart-dropdown/cart-dropdown.component';
 
 const Header = ({ currentUser, hidden }) => {
