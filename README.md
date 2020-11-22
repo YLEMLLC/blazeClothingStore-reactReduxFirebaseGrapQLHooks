@@ -1,6 +1,6 @@
 This huge project is a Web application for a clothing store. You can visit here to see the deployed version
                                                      "https://blaze-clothing.herokuapp.com/"
-or follow instruction to delpoy locally and see some awsome code!! This was created with React, Redux, and Graph QL, and then converted over to hooks and Redux saga while also using the context api. All datat from a local rest api was intergrated and into firebase harnising oAth google sign in. Great code to look at and learn from...
+or follow instruction to delpoy locally and see some awsome code!! This was created with React, Redux, and Graph QL, and then converted over to hooks and Redux saga while also using the react context api. All data from a local rest api was memoized as much as possible using selectors and then eventually mirgrated into firebase/firestore harnising oAath google sign in, and email sign in.  Testing has yet to begin will have update soon.. Great code to look at and learn from...
 
 
 # Getting Started with Create React App
